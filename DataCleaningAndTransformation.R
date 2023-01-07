@@ -12,7 +12,9 @@
 geodir = "/opt/projects/../AA_transcriptomics/GSE68801/expression_data/"
 datadir = "/opt/projects/../AA_transcriptomics/GSE68801/WGCNA/Data_WGCNA/"
 
-# Data Cleaning ==========================================================================================
+#=====================================================================================
+# Data Cleaning
+#=====================================================================================
 setwd(geodir)
 
 norm_data = read.table("GSE68801.normalised_data.tsv",sep="\t",header=T)
@@ -37,7 +39,9 @@ clinicsN = clinicsN %>% relocate(name , .before = sample)
 colnames(exp) = c("ensembl_gene_id","ProbeName",clinics$name) # rename col names of exp table to match clinical info table
 geneanno = exp[,c(1,2)] # extract gene annotation info for future use
 
-# Select Data to Feed into WGCNA Algorithm ==========================================================================================
+#=====================================================================================
+# Select Data to Feed into WGCNA Algorithm
+#=====================================================================================
 # expression info table for Normal samples
 expN = cbind( exp[,c(1,2)], exp[grepl('Normal', colnames(exp))]) #33
 # expression info table for all AA samples
@@ -56,7 +60,9 @@ expA.N = cbind( exp[,c(1,2)],
 expAAP.L = cbind( exp[,c(1,2)], exp[grepl('AAP_L', colnames(exp))]) #18
 expAAP.NL = cbind( exp[,c(1,2)], exp[grepl('AAP_NL', colnames(exp))]) #17
 
-# Save tbles for WGCNA Algorithm =========================================================================================
+#=====================================================================================
+# Save tables for WGCNA Algorithm
+#=====================================================================================
 setwd(datadir)
 
 # write exp tables
