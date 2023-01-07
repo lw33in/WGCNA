@@ -1,4 +1,4 @@
-# Applying WGCNA to	Human Alopecia Areata Skin Biopsy Samples
+# Applying WGCNA to Human Alopecia Areata Skin Biopsy Samples
 # Public GEO data: GSE68801 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE68801)
 # WGCNA: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-559
 
